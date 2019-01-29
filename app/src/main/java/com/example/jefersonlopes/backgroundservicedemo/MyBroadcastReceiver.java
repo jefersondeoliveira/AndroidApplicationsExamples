@@ -10,9 +10,10 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)){
-            Intent i = new Intent(context, MyIntentService.class);
+            Intent i = new Intent(context, MyJobIntentService.class);
             i.putExtra("sleepTime", 12);
-            context.startService(i);
+            //context.startService(i);
+            MyJobIntentService.enqueueWork(context, i);
         }
 
     }
