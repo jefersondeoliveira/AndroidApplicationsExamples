@@ -67,4 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    public void startJobIntentService(View view) {
+
+        Intent i = new Intent(this, MyJobIntentService.class);
+        i.putExtra("sleepTime", 12);
+        MyJobIntentService.enqueueWork(this, i);
+
+    }
 }
