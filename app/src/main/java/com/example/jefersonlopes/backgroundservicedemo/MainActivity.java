@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startIntentService(View view) {
-        //intent service is a best background service
+        //intent service is a advanced background service
         Intent intent = new Intent(this, MyIntentService.class);
         intent.putExtra("sleepTime", 12);
         startService(intent);

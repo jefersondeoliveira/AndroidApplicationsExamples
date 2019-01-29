@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MyIntentService extends IntentService {
 
@@ -18,6 +19,7 @@ public class MyIntentService extends IntentService {
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "onCreate, Thread name:"+Thread.currentThread().getName());
+        Toast.makeText(this, "StartedIntentService", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -51,5 +53,6 @@ public class MyIntentService extends IntentService {
     public void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy, Thread name:"+Thread.currentThread().getName());
+        Toast.makeText(this, "FinishedIntentService", Toast.LENGTH_SHORT).show();
     }
 }

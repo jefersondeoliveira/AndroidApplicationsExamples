@@ -24,6 +24,10 @@ public class MyBackgroundService extends Service {
         //Perform tasks: Dummy long operation
         new MyAsyncTask().execute(); //Background Thread
 
+        //START_STICKY Automatic restart background service and intent is null
+        //START_REDELIVER_INTENT Automatic restart background service and resend intent data
+        //START_NOT_STICKY Not restart background service
+
         return START_STICKY;
     }
 
